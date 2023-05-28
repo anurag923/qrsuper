@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit{
 
   register(){
     console.log('formvalue',this.registrationform.value);
-    this.auth.register(this.registrationform.value).subscribe((res)=>{
+    this.auth.register(this.registrationform.value,'1').subscribe((res)=>{
       console.log('registration done');
       //$('#register').hide();
     },(err)=>{

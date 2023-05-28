@@ -13,8 +13,8 @@ export class AuthService {
     this.httpClient = new HttpClient(handler)
    }
 
-  register(data:any):Observable<any>{
-    return this.http.post(globalapis.registration,data);
+  register(data:any,is_super:any):Observable<any>{
+    return this.http.post(`${globalapis.registration}?is_super=${is_super}`,data);
   }
 
   login(data:any):Observable<any>{

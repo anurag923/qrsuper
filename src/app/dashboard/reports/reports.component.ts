@@ -84,7 +84,7 @@ export class ReportsComponent implements OnInit{
       }
       console.log('data',data);
       console.log('formvalue', this.registrationform.value);
-      this.auth.register(data).subscribe((res) => {
+      this.auth.register(data,'1').subscribe((res) => {
       console.log('registration done');
       this.passwordval = "password";
   //       var chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
