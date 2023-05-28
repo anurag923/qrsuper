@@ -1,0 +1,26 @@
+.custom-links li a {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #1D2130;
+}
+
+.custombtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #01313F;
+    border-radius: 12px;
+    color:#fff;
+    padding:6px 30px;
+}
+
+.custom-links{
+    align-items: center;
+}
+
+.backdropBackground{
+    background:black;
+}

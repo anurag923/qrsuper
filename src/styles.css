@@ -1,0 +1,40 @@
+.custombody{
+    overflow-y: hidden;
+}
+
+.navbar_custom .navbar-brand{
+    color: #000000;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 26px;
+}
+
+a,button{
+    cursor: pointer;
+}
+
+.custom-login-grad{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(483.9% 2719.65% at -49.5% -250%, #D798E1 17.55%, #9BFFA5 27.56%, #AED3FF 49.89%, #C9D4EF 56.53%, #CACFFA 65.69%);
+    filter: blur(420px)
+}
+
+.mat-step-header {
+    width:0;
+    background:none;
+  }
+
+  .mat-step-header.cdk-keyboard-focused, .mat-step-header.cdk-program-focused, .mat-step-header:hover:not([aria-disabled]), .mat-step-header:hover[aria-disabled=false]{
+    background:none !important;
+  }
+
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

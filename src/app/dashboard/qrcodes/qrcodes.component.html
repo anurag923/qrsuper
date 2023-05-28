@@ -1,0 +1,82 @@
+<div class="d-flex">
+    <span class="mr-2 d-flex justify-content-center">
+        <h2 class="reportsheading">QR Codes</h2>
+    </span> 
+</div>
+<div class="mt-4 mb-4">
+    <div class="mr-0"  (click)=createqr()>
+        <!-- <select name="" class="customdropdown px-2" id="">
+            <option value="mobile" selected>Mobile Number</option>
+            <option value="name">Name</option>
+            <option value="sampletext">Sample Text</option>
+        </select>
+        <input type="text form-control" class="custominput"> -->
+        <button type="button" class="custombtn float-right mr-3">
+            Create QR
+        </button>
+    </div>
+
+</div>
+<div class="mr-3 mt-3 table-responsive card card-radius">
+    <table class="table mr-3 customtable">
+        <thead class="customthead">
+            <tr>
+                <th scope="col">Sl no</th>
+                <th scope="col">QRID</th>
+                <th scope="col">Date</th>
+                <th scope="col">QR</th>
+                <th scope="col">Clients</th>
+                <th scope="col">Assign Clients</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let q of qrcodes;let i = index">
+                <td>{{i+1}}</td>
+                <td>{{q.qrcode_id}}</td>
+                <td>{{q.date | date:"dd-MM-yyyy HH:mm:ss"}}</td>
+                <td>
+                    <div style="position:relative;width:240px;height:240px;" id="{{q.qrcode_id}}"><img src="{{q.qrcode_base64}}" alt="" width="240" height="240">
+                        <p class="mb-0"
+                            style="position:absolute;bottom:41px;right:-15px;font-weight:bold;font-size:12px;transform:rotate(270deg)">
+                            {{q.qrcode_id}}</p>
+                    </div>
+                    <div>
+                        <button (click)="captureQRcode(q.qrcode_id)" class="custombtn">Download</button>
+                    </div>
+                </td>
+                <td>{{q.client_id==1?'Not Assigned':q.client_id}}</td>
+                <td>
+                    <select name="" id="" (change)="assignqr($event,q.qrcode_id)">
+                        <option value="" selected>Select a client</option>
+                        <option value="{{u.client_id}}" selected="{{q.client_id == u.client_id ? 'selected' :''}}"
+                            *ngFor="let u of users">{{u.first_name}} {{u.last_name}}</option>
+                    </select>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>
+
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Assign QR</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                please confirm
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)=confirm()>ok</button>
+            </div>
+        </div>
+    </div>
+</div>

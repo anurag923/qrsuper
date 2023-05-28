@@ -1,0 +1,65 @@
+.customaligncenter {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #5E5E5E;
+    align-items: center;
+}
+
+.reportsheading {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    color: #2B3F57;
+    align-items: center;
+}
+
+.customdropdown {
+    box-sizing: border-box;
+    background: #F6F8FA;
+    border: 1px solid #DCDCDC;
+    border-radius: 8px 0px 0px 8px;
+    width: 175px;
+    height: 48px;
+}
+
+.custominput {
+    box-sizing: border-box;
+    background: #F6F8FA;
+    border: 1px solid #DCDCDC;
+    border-radius: 0 8px 8px 0;
+    width: 260px;
+    height: 48px;
+}
+
+.custombtn {
+    box-sizing: border-box;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 12px;
+    width: 139px;
+    height: 48px;
+    background: #01313F;
+    border: 1px solid #01313F;
+    border-radius: 12px;
+    color: #fff;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.customthead{
+    background: #01313F;
+    border-radius: 12px 12px 0px 0px;
+    color:white;
+}
+
+.card-radius{
+    border-radius:15px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 395px;
+}

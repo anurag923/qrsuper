@@ -1,0 +1,36 @@
+.navbar_custom {
+    height: 76px;
+}
+
+
+.searchbackground {
+    background: #F3F7FA;
+    border-radius: 12px;
+    width: 290px;
+}
+
+::placeholder {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #1D2130;
+}
+
+.aftersearch {
+    width: 21.5px;
+    height: 21.5px;
+    background: #2B3F6C;
+}
+
+.customdiv {
+    align-items: center;
+}
+
+.postaftersearch {
+    width: 40px;
+    height: 40px;
+    background: #CFEEFD;
+    border: 1px solid #88D6FA;
+    border-radius:50%;
+}

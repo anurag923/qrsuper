@@ -1,0 +1,342 @@
+<div class="container-fluid">
+    <!-- <div class="row mb-4 d-none d-md-block">
+      <div class="col-12 d-flex w-100 justify-content-between covidheading">
+        <h4>
+          Covid Screeing Form
+        </h4>
+        <button>
+          Create QR Form
+        </button>
+      </div>
+    </div> -->
+      <div class="row d-flex justify-content-center">
+          <div class="col-12 bg-white mr-3 customcovidform_mobile" id="covidscreeningform">
+              <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+                  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+                </button> -->
+                <mat-stepper [linear]="isLinear" #stepper>
+                  <mat-step [stepControl]="firstFormGroup">
+                  <div class="formheading d-none d-md-block">
+                      <h2 class="mb-3">Visitor Information</h2>
+                      <p>Fill in the Visitor information form. It will take a couple of minutes. 
+                          All you need is a covid free environment.</p>
+  
+                      <div class="d-flex justify-content-center my-4">
+                          <p class="mb-0">
+                              We take privacy issues seriously. You can be sure that your personal data is securely protected.
+                          </p>
+                      </div>
+                  </div>
+                  <div class="formheading d-block d-md-none">
+                    <h4 class="mb-3">Visitor Information</h4>
+                    <p style="font-size:14px;">Fill in the Visitor information form. It will take a couple of minutes. 
+                        All you need is a covid free environment.</p>
+
+                    <div class="d-flex justify-content-center my-4">
+                        <p class="mb-0" style="font-size:12px;">
+                            We take privacy issues seriously. You can be sure that your personal data is securely protected.
+                        </p>
+                    </div>
+                  </div>
+                    <form [formGroup]="firstFormGroup">
+                      <!-- <mat-form-field appearance="fill">
+                        <mat-label>Name</mat-label>
+                        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+                      </mat-form-field>
+                      <div>
+                        <button mat-button matStepperNext>Next</button>
+                      </div> -->
+  
+                      <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputEmail4">First Name</label>
+                            <input type="text"  class="form-control" id="inputEmail4">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="inputPassword4">Last Name</label>
+                            <input type="text"  class="form-control" id="inputPassword4">
+                          </div>
+                        </div>
+  
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputEmail4">Phone Numnber </label>
+                            <input type="text"  class="form-control" id="inputEmail4">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="inputPassword4">Email</label>
+                            <input type="email"  class="form-control" id="inputPassword4">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="inputAddress">Company Name</label>
+                          <input type="text"  class="form-control" id="inputAddress">
+                        </div>
+                        <div class="form-group">
+                          <label for="inputAddress2">Address</label>
+                          <input type="text"  class="form-control" id="inputAddress2" placeholder="Street Address">
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <!-- <label for="inputCity">City</label> -->
+                            <input type="text"  class="form-control" placeholder = "city" id="inputCity">
+                          </div>
+                          <div class="form-group col-md-4">
+                            <!-- <label for="inputState">State</label> -->
+                            <select id="inputState" class="form-control"  placeholder="state">
+                              <option selected>state</option>
+                              <option>...</option>
+                            </select>
+                          </div>
+                          <div class="form-group col-md-2">
+                            <input type="text" class="form-control"  id="inputZip" placeholder="pincode">
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputEmail4">Date</label>
+                            <input type="text" class="form-control"  id="inputEmail4">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="inputPassword4">Whom to Visit</label>
+                            <input type="text" class="form-control"  id="inputPassword4">
+                          </div>
+                        </div>
+  
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputEmail4">Check-in Time</label>
+                            <input type="text" class="form-control"  id="inputEmail4">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="inputPassword4">Check-out Time</label>
+                            <input type="email" class="form-control"  id="inputPassword4">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="inputAddress">Purpose of Visit</label>
+                          <input type="text" class="form-control"  id="inputAddress">
+                        </div>
+                        <div class="next w-100">
+                        <button type="submit" class="btn float-right"matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+                  <mat-step [stepControl]="secondFormGroup">
+                    <div class="formheading d-none d-md-block">
+                      <h2 class="mb-3">Covid Screening</h2>
+                      <p>Fill in the Visitor information form. It will take a couple of minutes. 
+                          All you need is a covid free environment.</p>
+  
+                      <div class="d-flex justify-content-center my-4">
+                          <p class="mb-0">
+                              We take privacy issues seriously. You can be sure that your personal data is securely protected.
+                          </p>
+                      </div>
+                  </div>
+                  <div class="formheading d-block d-md-none">
+                    <h4 class="mb-3">Covid Screening</h4>
+                    <p style="font-size:14px;">Fill in the Visitor information form. It will take a couple of minutes. 
+                        All you need is a covid free environment.</p>
+
+                    <div class="d-flex justify-content-center my-4">
+                        <p class="mb-0" style="font-size:12px;">
+                            We take privacy issues seriously. You can be sure that your personal data is securely protected.
+                        </p>
+                    </div>
+                  </div>
+                      <div class="row covidsteptwodiv d-flex justify-content-center p-2 my-4">
+                          <div class="col-9">
+                              <h4>Are you feeling unwell ?</h4>
+                              <p class="mb-0">Please click yes or no to confirm</p>
+                          </div>
+                          <div class="col-3">
+                              <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                  <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                  <label class="form-check-label" for="inlineRadio2">No</label>
+                                </div>
+                          </div>
+                      </div>
+  
+                      <div class="w-100 d-flex justify-content-between">
+                          <p class="text-left">Body Temparature</p>
+                          <label class="switch text-right">
+                              <input type="checkbox" checked>
+                              <span class="slider round"></span>
+                            </label>
+                      </div>
+  
+                      <input class="form-control" type="text" value = "98 F">
+  
+                      <div class="row covidsteptwodiv d-flex justify-content-center p-2 my-4">
+                          <div class="col-9">
+                              <h4>Have you experienced any cold or flue - like
+                                  symptoms in the last 14 days ?</h4>
+                              <p class="mb-0">(Fever, sore - throat, respiratory illness, 
+                                  difficulty breathing ) ?m</p>
+                          </div>
+                          <div class="col-3">
+                              <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                  <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                  <label class="form-check-label" for="inlineRadio2">No</label>
+                                </div>
+                          </div>
+                      </div>
+  
+                      <div class="row covidsteptwodiv d-flex justify-content-center p-2 my-4">
+                          <div class="col-9">
+                              <h4>Have you been in contact with someone
+                                  who has been diagnosed with COVID-19
+                                  in the last 14 days?</h4>
+                              <p class="mb-0">Please click yes or no to confirm</p>
+                          </div>
+                          <div class="col-3">
+                              <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                  <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                  <label class="form-check-label" for="inlineRadio2">No</label>
+                                </div>
+                          </div>
+                      </div>
+  
+                      <div class="form-row my-4">
+                          <div class="form-group col-md-6">
+                            <label for="inputEmail4">Place Travelling From</label>
+                            <input type="text" class="form-control"  id="inputEmail4">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="inputPassword4">Place Travelling To</label>
+                            <input type="text" class="form-control"  id="inputPassword4">
+                          </div>
+                        </div>
+  
+                      <div class="row covidsteptwodiv d-flex justify-content-center p-2 my-4">
+                          <div class="col-9">
+                              <h4>Do you agree to abide with site COVID -19 
+                                  protocol?</h4>
+                              <p class="mb-0">Please click yes or no to confirm</p>
+                          </div>
+                          <div class="col-3">
+                              <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                  <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                  <label class="form-check-label" for="inlineRadio2">No</label>
+                                </div>
+                          </div>
+                      </div>
+  
+                      <div class="next w-100 my-4">
+                        <div class="float-right d-flex justify-content-between">
+                          <button type="submit" class="btn mx-2" matStepperPrevious style="background:transparent; border:1px solid #01313F ; border-radius: 16px;color:black">Previous</button>
+                          <button type="submit" class="btn " matStepperNext>Next</button>
+                        </div>
+  
+                      </div>
+  
+                    <!-- <form [formGroup]="secondFormGroup">
+                      <mat-form-field appearance="fill">
+                        <mat-label>Address</mat-label>
+                        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                               required>
+                      </mat-form-field>
+                      <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form> -->
+                  </mat-step>
+                  <mat-step>
+                    <div class="formheading d-none d-md-block">
+                      <h2 class="mb-3">Face Recognition</h2>
+                      <p>Fill in the Visitor information form. It will take a couple of minutes. 
+                          All you need is a covid free environment.</p>
+  
+                      <div class="d-flex justify-content-center my-4">
+                          <p class="mb-0">
+                              We take privacy issues seriously. You can be sure that your personal data is securely protected.
+                          </p>
+                      </div>
+                  </div>
+                  <div class="formheading d-block d-md-none">
+                    <h4 class="mb-3">Face Recognition</h4>
+                    <p style="font-size:14px;">Fill in the Visitor information form. It will take a couple of minutes. 
+                        All you need is a covid free environment.</p>
+
+                    <div class="d-flex justify-content-center my-4">
+                        <p class="mb-0" style="font-size:12px;">
+                            We take privacy issues seriously. You can be sure that your personal data is securely protected.
+                        </p>
+                    </div>
+                  </div>
+                  <div class="row covidsteptwodiv  p-2 my-4">
+                    <div class="col-md-3 col-12">
+                      <p>
+                        Image capture
+  
+                      </p>
+                      <div style="height: 125px;background: rgba(80, 81, 249, 0.15);border-radius: 16px;">
+  
+                      </div>
+                    </div>
+                    <div class="col-md-9 col-12">
+                      <div class="d-flex justify-content-start mt-md-5 mt-2" style="align-items:flex-start;flex-direction: column;">
+                      <button class="selfiebtn my-2">Take a selfie</button>
+                      <p class="selfiepara d-none d-md-block">
+                        Take a selfie and upload here to recognise you
+                      </p>
+                      <p class="d-block d-md-none" style="font-size:10px;">
+                        Take a selfie and upload here to recognise you
+                      </p>
+                    </div>
+                    </div>
+                      <!-- <div class="col-9">
+                          <h4>Are you feeling unwell ?</h4>
+                          <p class="mb-0">Please click yes or no to confirm</p>
+                      </div>
+                      <div class="col-3">
+                          <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                              <label class="form-check-label" for="inlineRadio1">yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                              <label class="form-check-label" for="inlineRadio2">no</label>
+                            </div>
+                      </div> -->
+                  </div>
+  
+                  <div class="next w-100 my-4">
+                    <div class="float-right d-flex justify-content-between">
+                      <button type="submit" class="btn mx-2" matStepperPrevious style="background:transparent; border:1px solid #01313F ; border-radius: 16px;color:black">Previous</button>
+                      <button type="submit" class="btn " matStepperNext>Next</button>
+                    </div>
+  
+                  </div>
+                    <!-- <ng-template matStepLabel>Done</ng-template> -->
+                    <!-- <p>You are now done.</p>
+                    <div>
+                      <button mat-button matStepperPrevious>Back</button>
+                      <button mat-button (click)="stepper.reset()">Reset</button>
+                    </div> -->
+                  </mat-step>
+                </mat-stepper>
+                
+          </div>
+
+      </div>
+  </div>
+  

@@ -1,0 +1,42 @@
+
+<div style="height:600px;width:1092px;overflow:hidden;" id="login">
+    <div class="row" style="height:600px">
+        <div class="col-5" style="background:#01313F;"></div>
+        <div class="col-7 d-flex justify-content-center p-5" style="position:relative;">
+            <div class="custom-login-grad">
+
+            </div>
+            <form style="width:inherit;z-index: 1;" [formGroup]="loginform">
+                <div class="mb-5">
+                    <h3
+                        style="font-family: 'Inter';font-style: normal;font-weight: 700;font-size: 24px;color: #1D2130;">
+                        Login</h3>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control mt-2" style="border-radius:8px;" id="exampleInputEmail1" formControlName="email"
+                        aria-describedby="emailHelp">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control mt-2" style="border-radius:8px;" formControlNamw="password"
+                        id="exampleInputPassword1">
+                </div>
+                <div class="w-100 ">
+                    <a class="float-right">Forgot Password ?</a>
+                </div>
+                <button mat-dialog-close type="button" class="btn btn-primary w-100 my-2" (click)="gotodashboard()"
+                    style="background: #01313F;border-radius: 12px;">Continue with email</button>
+                <p class="text-center"
+                    style="font-family: 'Inter';font-style: normal;font-weight: 400;font-size: 16px;color: #1D1D42;">Or
+                </p>
+                <div class="my-2 d-flex justify-content-center" style="align-items:center">
+                    <button
+                        style="box-sizing: border-box;background: #FFFFFF;border: 1px solid #EFF0F7;box-shadow: 0px 2px 6px rgba(19, 18, 66, 0.07);border-radius: 46px;padding:15px 120px;">Login
+                        With Google</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

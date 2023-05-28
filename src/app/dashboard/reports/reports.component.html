@@ -1,0 +1,134 @@
+<div class="d-flex">
+    <span class="mr-2 d-flex justify-content-center">
+        <h2 class="reportsheading">Registrations</h2>
+    </span> <span class="d-flex justify-content-center customaligncenter">Field QR scans</span>
+</div>
+<div class="mt-4 mb-4">
+    <div class="mr-0">
+        <select name="" class="customdropdown px-2" id="">
+            <option value="mobile" selected>Mobile Number</option>
+            <option value="name">Name</option>
+            <option value="sampletext">Sample Text</option>
+        </select>
+        <input type="text form-control" class="custominput">
+        <button type="button" class="custombtn float-right mr-3" (click)="createnew()" data-toggle="modal" data-target="#staticBackdrop">
+          Create New
+      </button>
+        </div>
+
+</div>
+<div class="mr-3 mt-3 table-responsive card card-radius">
+    <table class="table mr-3 customtable">
+        <thead class="customthead">
+          <tr>
+            <th scope="col">Slno</th>
+            <th scope="col">Id</th>
+            <th scope="col">Date</th>
+            <th scope="col">Name</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Email</th>
+            <th scope="col">Company Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Type of Account</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let u of users;let i = index">  
+            <td>{{i+1}}</td>
+            <td>{{u.client_id}}</td>
+            <td>{{u.created_date | date:"dd-MM-yyyy HH:mm:ss"}}</td>
+            <td>{{u.first_name}} {{u.last_name}}</td>
+            <td>-</td>
+            <td>{{u.work_email}}</td>
+            <td>-</td>
+            <td>-</td>
+            <td>Business</td>
+          </tr>
+
+        </tbody>
+      </table>
+ 
+</div>
+
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Client Registration</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form style="width:inherit;z-index: 1;" [formGroup]="registrationform" #heroForm="ngForm">
+         
+          <div class="row">
+              <div class="col">
+                  <label for="">First name</label>
+                  <input type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }" name="firstname" formControlName="first_name">
+                  <div *ngIf="submitted && f.first_name.errors" class="text-danger">
+                    <div *ngIf="f.first_name.errors['required']">First name is required</div>
+                  </div>
+                  
+              </div>
+              <div class="col">
+                  <label for="">Last name</label>
+                  <input type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }" formControlName="last_name">
+                  <div *ngIf="submitted && f.last_name.errors" class="text-danger">
+                    <div *ngIf="f.last_name.errors['required']">Last name is required</div>
+                  </div>
+
+              </div>
+          </div>
+          <div class="form-group mb-3 mt-3">
+            <label for="exampleInputPassword1">Company Name</label>
+            <input type="email" class="form-control mt-2" [ngClass]="{ 'is-invalid': submitted && f.company_name.errors }" formControlName="company_name" style="border-radius:8px;" id="exampleInputPassword1">
+            <div *ngIf="submitted && f.company_name.errors" class="text-danger">
+                <div *ngIf="f.company_name.errors['required']">Company Name is required</div>
+                <div *ngIf="f.company_name.errors['pattern']">Company Name is invalid</div>
+              </div>
+        </div>
+          <div class="form-group mb-3 mt-3">
+              <label for="exampleInputPassword1">Work Email</label>
+              <input type="email" class="form-control mt-2" [ngClass]="{ 'is-invalid': submitted && f.work_email.errors }" formControlName="work_email" style="border-radius:8px;" id="exampleInputPassword1">
+              <div *ngIf="submitted && f.work_email.errors" class="text-danger">
+                <div *ngIf="f.work_email.errors['required']">Email is required</div>
+              </div>
+              
+          </div>
+          <div class="form-group mb-3 mt-3">
+            <label for="exampleInputPassword1">Phonenumber</label>
+            <input type="email" class="form-control mt-2" [ngClass]="{ 'is-invalid': submitted && f.phonenumber.errors }" formControlName="phonenumber" style="border-radius:8px;" id="exampleInputPassword1">
+            <div *ngIf="submitted && f.phonenumber.errors" class="text-danger">
+              <div *ngIf="f.phonenumber.errors['required']">Phonenumber is required</div>
+            </div>
+            
+        </div>
+          <div class="form-group mb-3 mt-3">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="{{showpassword?'text':'password'}}" readonly class="form-control mt-2"  [(ngModel)]="passwordval"  formControlName="password" style="border-radius:8px;" id="password">
+              <!-- <div *ngIf="submitted && f.password.errors" class="text-danger">
+                  <div *ngIf="f.password.errors['required']">Password is required</div>
+                </div> -->
+              <input type="checkbox" (click)="seepassword($event)"> show password
+          </div>
+          <!-- <div class="w-100 d-flex my-2" style="align-items:center;">
+              <input type="checkbox" (click)="agree($event)" class="mr-2"><span>I agree to QRfied's <a class="mr-1" routerLink="/privacypolicy">Privacy Policy</a>and <a class="mr-1" routerLink="/tandc">Terms of Service</a></span>
+          </div> -->
+          <button type="button" mat-dialog-close class="btn btn-primary w-100 mt-2 " (click)="register(); heroForm.resetForm()"
+              style="background: #01313F;border-radius: 12px;">Sign Up</button>
+    
+
+          <!-- <div class="d-flex justify-content-center mt-4">
+              <span class="mr-1">Already have an account ?</span> <a routerLink="/">login</a>
+          </div> -->
+
+      </form>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="register()" data-dismiss="modal">Register</button>
+      </div> -->
+    </div>
+  </div>
+</div>
